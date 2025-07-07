@@ -48,13 +48,13 @@ const VideoGrid = () => {
       {
         id: 5,
         title: 'Zebra',
-        videoSrc: '/zebra.mp4',
+        videoSrc: '/abc.mp4',
         duration: '0:27'
       },
       {
         id: 6,
         title: 'Snow',
-        videoSrc: '/snow.mp4',
+        videoSrc: '/veo1.mp4',
         duration: '0:27'
       }
     ];
