@@ -33,7 +33,7 @@ const VIDEO_SOURCES: VideoSource[] = [
 const LoadingPlaceholder = () => (
   <div className="w-full aspect-video bg-gray-800 rounded-xl flex items-center justify-center overflow-hidden">
     <img 
-      src="/loadingImg" 
+      src="/loading5" 
       alt="Loading video..." 
       className="w-full h-full object-cover"
       onError={(e) => {
