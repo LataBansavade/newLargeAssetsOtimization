@@ -57,11 +57,11 @@ class ErrorBoundary extends React.Component<{children: React.ReactNode}, {hasErr
     return { hasError: true };
   }
 
-  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+  override componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     console.error('VideoPlayer Error:', error, errorInfo);
   }
 
-  render() {
+  override render() {
     if (this.state.hasError) {
       return (
         <div className="w-full aspect-video bg-gray-800 rounded-xl flex items-center justify-center">
@@ -85,7 +85,7 @@ const FeaturedVideos = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry?.isIntersecting) {
           setIsVisible(true);
           // Disconnect after first intersection
           if (sectionRef.current) {
@@ -121,9 +121,7 @@ const FeaturedVideos = () => {
       link.href = videoSources[0].src;
       document.head.appendChild(link);
       
-      return () => {
-        document.head.removeChild(link);
-      };
+    
     }
   }, [isVisible, videoSources]);
 

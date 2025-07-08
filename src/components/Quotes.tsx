@@ -1,5 +1,5 @@
-import { useState, useEffect, useCallback, useRef, useMemo, memo } from 'react';
-import type { JSX } from 'react';
+import React, { useState, useEffect, useCallback, useRef, useMemo, memo } from 'react';
+import type { ReactElement } from 'react';
 import { quotesData } from './namesData';
 
 const ITEMS_PER_PAGE = 15;
@@ -20,17 +20,23 @@ const QuoteCard = memo(({ quote }: { quote: typeof quotesData[0] }) => (
 ));
 
 // Virtualized List Component
-const VirtualizedList = ({ items, itemHeight, renderItem }: {
+interface VirtualizedListProps {
   items: typeof quotesData;
   itemHeight: number;
-  renderItem: (item: typeof quotesData[0]) => JSX.Element;
+  renderItem: (item: typeof quotesData[0]) => ReactElement;
+}
+
+const VirtualizedList: React.FC<VirtualizedListProps> = ({
+  items,
+  itemHeight,
+  renderItem
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [visibleRange, setVisibleRange] = useState({ start: 0, end: 0 });
   const [containerHeight, setContainerHeight] = useState(0);
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    if (!containerRef.current) return;  
     
     const updateVisibleRange = () => {
       if (!containerRef.current) return;
@@ -81,7 +87,7 @@ const VirtualizedList = ({ items, itemHeight, renderItem }: {
   );
 };
 
-const Quotes = () => {
+const Quotes: React.FC = () => {
   const [visibleQuotes, setVisibleQuotes] = useState<typeof quotesData>([]);
   const [page, setPage] = useState(1);
   const loader = useRef<HTMLDivElement>(null);
@@ -127,7 +133,7 @@ const Quotes = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         const target = entries[0];
-        if (target.isIntersecting && hasMore) {
+        if (target?.isIntersecting && hasMore) {
           loadMoreQuotes();
         }
       },
@@ -153,7 +159,7 @@ const Quotes = () => {
   // Memoize the rendered items to prevent unnecessary re-renders
   const renderedQuotes = useMemo(() => (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {visibleQuotes.map((quote) => (
+      {visibleQuotes.map((quote: typeof quotesData[0]) => (
         <QuoteCard key={quote.id} quote={quote} />
       ))}
     </div>

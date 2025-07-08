@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
+import type { FC } from 'react';
 
 interface VideoSource {
   src: string;
@@ -9,7 +10,7 @@ interface VideoPlayerProps {
   sources: VideoSource[];
 }
 
-const VideoPlayer = ({ sources }: VideoPlayerProps) => {
+const VideoPlayer: FC<VideoPlayerProps> = ({ sources }) => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
   const currentSource = sources[currentVideoIndex];
@@ -43,15 +44,15 @@ const VideoPlayer = ({ sources }: VideoPlayerProps) => {
           muted
           playsInline
           preload="auto"
-          key={currentSource.src}
+          key={currentSource?.src}
         >
-          <source src={currentSource.src} type="video/mp4" />
+          <source src={currentSource?.src} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         
         {/* Video Title Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-          <span className="text-white font-medium text-lg">{currentSource.title}</span>
+          <span className="text-white font-medium text-lg">{currentSource?.title}</span>
         </div>
       </div>
 

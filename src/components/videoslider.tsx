@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 
 interface VideoItem {
   id: number;
@@ -29,7 +29,7 @@ const videoItems: VideoItem[] = [
   },
 ];
 
-const VideoSlider = () => {
+const VideoSlider: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
