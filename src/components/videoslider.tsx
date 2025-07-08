@@ -9,22 +9,22 @@ interface VideoItem {
 const videoItems: VideoItem[] = [
   {
     id: 1,
-    src: '/V1.mp4',
+    src: 'https://res.cloudinary.com/dmom1krba/video/upload/v1751994903/V1_mpvd16.mp4',
     poster: '/V1.jpg'
   },
   {
     id: 2,
-    src: '/V2.mp4',
+    src: 'https://res.cloudinary.com/dmom1krba/video/upload/v1751994849/V2_g5ru1v.mp4',
     poster: '/V2.jpg'
   },
   {
     id: 3,
-    src: '/V3.mp4',
+    src: 'https://res.cloudinary.com/dmom1krba/video/upload/v1751994836/V3_fwma4c.mp4',
     poster: '/V3.jpg'
   },
   {
     id: 4,
-    src: '/wildLife.mp4',
+    src: 'https://res.cloudinary.com/dmom1krba/video/upload/v1751994830/wildLife_bcl7zp.mp4',
     poster: '/wildLife.jpg'
   },
 ];
