@@ -89,7 +89,7 @@ const FullScaleVideo: React.FC = () => {
       <div className={`absolute inset-0 z-10 transition-opacity duration-500 ${isLoading ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
         <div className="absolute inset-0 bg-black">
           <img 
-            src="/LoadingImg" 
+            src="/loading4" 
             alt="Loading video..." 
             className="w-full h-full object-cover"
             onError={(e) => {
