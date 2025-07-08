@@ -119,7 +119,7 @@ const FullScaleVideo: React.FC = () => {
             preload="auto"
             poster="/LoadingImg.jpg" // Add a poster frame for better loading
           >
-            <source src="/veo1.mp4" type="video/mp4" />
+            <source src="https://res.cloudinary.com/dmom1krba/video/upload/v1751994895/veo1_caus4a.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
 
