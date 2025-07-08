@@ -111,7 +111,7 @@ const Hero: React.FC = () => {
           className="w-full h-full object-cover"
           poster="/earth-poster.jpg" 
         >
-          <source src="/earth.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dmom1krba/video/upload/v1751994872/earth_qi9kpv.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-black/60"></div>
