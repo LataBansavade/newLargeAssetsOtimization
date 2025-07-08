@@ -12,17 +12,17 @@ interface VideoSource {
 
 const VIDEO_SOURCES: VideoSource[] = [
     { 
-        src: '/snow.mp4', 
+        src: 'https://res.cloudinary.com/dmom1krba/video/upload/v1751978203/snow_hzaond.mp4', 
         title: 'Snow',
         poster: '/snow-poster.jpg'
       },
   { 
-    src: '/crowd.mp4', 
+    src: 'https://res.cloudinary.com/dmom1krba/video/upload/v1751994891/crowd_ecpwh7.mp4', 
     title: 'Crowd',
     poster: '/crowd-poster.jpg' 
   },
   { 
-    src: '/sea.mp4', 
+    src: 'https://res.cloudinary.com/dmom1krba/video/upload/v1751994882/sea_j3x2gx.mp4', 
     title: 'Sea',
     poster: '/sea-poster.jpg'
   },
@@ -33,7 +33,7 @@ const VIDEO_SOURCES: VideoSource[] = [
 const LoadingPlaceholder = () => (
   <div className="w-full aspect-video bg-gray-800 rounded-xl flex items-center justify-center overflow-hidden">
     <img 
-      src="/loading5" 
+      src="https://res.cloudinary.com/dmom1krba/image/upload/v1708941062/cld-sample-2.jpg" 
       alt="Loading video..." 
       className="w-full h-full object-cover"
       onError={(e) => {
