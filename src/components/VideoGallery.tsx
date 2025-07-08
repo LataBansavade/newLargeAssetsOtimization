@@ -18,12 +18,12 @@ const VideoGallery = () => {
 
   // List of video files in your public folder
   const videoFiles = [
-    { id: '1', src: '/winter.mp4', thumbnail: '/loading2.jpg', title: 'Mountain View' },
-    { id: '2', src: '/earth.mp4', thumbnail: '/loading3.jpg', title: 'Ocean Waves' },
-    { id: '3', src: '/sea.mp4', thumbnail: '/loading4.jpg', title: 'City Life' },
-    { id: '4', src: '/V3.mp4', thumbnail: '/loading5.jpg', title: 'Wildlife' },
-    { id: '5', src: '/veo2.mp4', thumbnail: '/loading6.jpg', title: 'Winter Wonderland' },
-    { id: '6', src: '/space couple.mp4', thumbnail: '/loading7.jpg', title: 'Space Exploration' },
+    { id: '1', src: 'https://res.cloudinary.com/dmom1krba/video/upload/v1751994884/winter_emwzsh.mp4', thumbnail: '/loading2.jpg', title: 'Mountain View' },
+    { id: '2', src: 'https://res.cloudinary.com/dmom1krba/video/upload/v1751994884/winter_emwzsh.mp4', thumbnail: '/loading3.jpg', title: 'Ocean Waves' },
+    { id: '3', src: 'https://res.cloudinary.com/dmom1krba/video/upload/v1751994882/sea_j3x2gx.mp4', thumbnail: '/loading4.jpg', title: 'City Life' },
+    { id: '4', src: 'https://res.cloudinary.com/dmom1krba/video/upload/v1751994836/V3_fwma4c.mp4', thumbnail: '/loading5.jpg', title: 'Wildlife' },
+    { id: '5', src: 'https://res.cloudinary.com/dmom1krba/video/upload/v1751994834/veo2_pquvmy.mp4', thumbnail: '/loading6.jpg', title: 'Winter Wonderland' },
+    { id: '6', src: 'https://res.cloudinary.com/dmom1krba/video/upload/v1751994856/space_couple_ikj5tv.mp4', thumbnail: '/loading3.jpg', title: 'Space Exploration' },
   ];
 
   // Set up intersection observer for viewport detection
