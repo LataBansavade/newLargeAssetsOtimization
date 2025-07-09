@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react';
-
+import Hero from "../../components/Hero"
 // Lazy load components that are only needed on this page
-const Hero = lazy(() => import('../../components/Hero'));
+// const Hero = lazy(() => import('../../components/Hero'));
 const VideoGallery = lazy(() => import('../../components/VideoGallery'));
 const FeaturedVideos = lazy(() => import('../../components/FeaturedVideos'));
 const FullScaleVideo = lazy(() => import('../../components/FullScaleVideo'));
@@ -16,9 +16,12 @@ const LoadingSpinner = () => (
 
 export default function Home() {
   return (
+    <div>
+       <Hero />
+  
     <Suspense fallback={<LoadingSpinner />}>
       <div className="bg-black">
-        <Hero />
+       
         <VideoGallery />
         <FeaturedVideos />
         <FullScaleVideo />
@@ -26,5 +29,6 @@ export default function Home() {
         <VideoSlider />
       </div>
     </Suspense>
+      </div>
   );
 }
